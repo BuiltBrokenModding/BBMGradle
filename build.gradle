@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.9.7'
+}
+
+group = 'com.builtbroken.bbmgradle'
+version = '1.0-SNAPSHOT'
+archivesBaseName = 'bbmgradle'
+targetCompatibility = '1.8'
+sourceCompatibility = '1.8'
+
+dependencies {
+    compile gradleApi()
+
+    compile 'com.google.guava:guava:23.0'
+
+    // Use JUnit test framework
+    testCompile 'junit:junit:4.12'
+}
+
+gradlePlugin {
+    plugins {
+        GistGradle {
+            id = 'com.builtbroken.bbmgradle'
+            implementationClass = 'com.builtbroken.bbmgradle.BBMGradlePlugin'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
