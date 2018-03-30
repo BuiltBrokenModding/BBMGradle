@@ -1,5 +1,8 @@
 package com.builtbroken.bbmgradle;
 
+import com.energizedwork.gradle.idea.IdeaBasePlugin;
+import com.matthewprenger.cursegradle.CurseGradlePlugin;
+import net.minecraftforge.gradle.common.BasePlugin;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 
@@ -11,6 +14,8 @@ public class BBMGradlePlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-
+        project.getPluginManager().apply(BasePlugin.class); // ForgeGradle
+        project.getPluginManager().apply(CurseGradlePlugin.class); // CurseGradle
+        project.getPluginManager().apply(IdeaBasePlugin.class); // IDEA Plugins
     }
 }
