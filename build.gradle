@@ -3,7 +3,6 @@ plugins {
     id 'idea'
     id 'eclipse'
     id 'java-gradle-plugin'
-    id 'com.gradle.plugin-publish' version '0.9.7'
 }
 
 group = 'com.builtbroken.bbmgradle'
@@ -16,6 +15,9 @@ dependencies {
     compile gradleApi()
 
     compile 'com.google.guava:guava:23.0'
+    compile 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    compile 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.9'
+    compile 'gradle.plugin.com.energizedwork:idea-gradle-plugins:1.4'
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
@@ -34,5 +36,9 @@ repositories {
     jcenter()
     maven {
         url "https://plugins.gradle.org/m2/"
+    }
+    maven {
+        name = "forge"
+        url = "http://files.minecraftforge.net/maven"
     }
 }
